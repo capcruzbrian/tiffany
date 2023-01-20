@@ -1,0 +1,6 @@
+config {
+    type: "declaration",
+    database: "galvanic-asset-350518",
+    schema: "dataform",
+    name: "kaggle_retail_table"
+}

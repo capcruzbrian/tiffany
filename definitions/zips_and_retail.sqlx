@@ -1,0 +1,19 @@
+config { 
+  type: "operations",
+  hasOutput: true 
+}
+CREATE TABLE ${self()} (
+    Ship Mode STRING
+    Segment STRING
+	  Country STRING
+	  City STRING
+	  State STRING
+    Postal Code STRING
+    Region STRING
+	  Category STRING
+	  Sub-Category STRING
+	  Sales STRING
+	  Quantity STRING
+	  Discount STRING
+	  Profit STRING
+)
