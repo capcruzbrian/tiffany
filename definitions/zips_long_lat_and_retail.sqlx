@@ -1,22 +1,23 @@
 config { 
-  type: "operations",
-  hasOutput: true 
+  type: "table"
 }
-CREATE TABLE ${self()} (
-  Ship_Mode STRING,
-  Segment STRING,
-  Country STRING,
-  City STRING,
-  State STRING,
-  Long STRING,
-  Lat STRING,
-  Postal_Code STRING,
-  Region STRING,
-  Category STRING,
-  Sub_Category STRING,
-	Sales STRING,
-	Quantity STRING,
-	Discount STRING,
-	Profit STRING
-)
-
+SELECT
+  Retail.Ship_Mode,
+  Retail.Segment,
+  Retail.Country,
+  Retail.City,
+  Retail.State,
+  Coordinates.LNG,
+  Coordinates.LAT,
+  Retail.Postal_Code,
+  Retail.Region,
+  Retail.Category,
+  Retail.Sub_Category,
+	Retail.Sales,
+	Retail.Quantity,
+	Retail.Discount,
+	Retail.Profit 
+FROM
+  ${ref("retail_table_better")} as Retail
+  LEFT JOIN ${ref("zip_lat_long")} as Coordinates
+    ON CAST(Retail.Postal_Code as INT64) = Coordinates.ZIP
