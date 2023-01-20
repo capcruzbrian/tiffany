@@ -20,4 +20,4 @@ SELECT
 FROM
   ${ref("retail_table_better")} as Retail
   LEFT JOIN ${ref("zip_lat_long")} as Coordinates
-    ON CAST(Retail.Postal_Code as INT64) = Coordinates.ZIP
+    ON CAST(Retail.Postal_Code as int) = Coordinates.ZIP
