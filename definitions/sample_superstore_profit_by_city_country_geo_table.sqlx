@@ -1,0 +1,15 @@
+config { 
+  type: "table"
+}
+SELECT
+  Superstore.category,
+  Superstore.city,
+  Superstore.country,
+  Superstore.postal_code,
+  Superstore.profit,
+  Coordinates.LNG,
+  Coordinates.LAT
+FROM
+  ${ref("sample_superstore")} as Superstore
+  LEFT JOIN ${ref("zip_lat_long")} as Coordinates
+    ON Superstore.postal_code = Coordinates.Zip

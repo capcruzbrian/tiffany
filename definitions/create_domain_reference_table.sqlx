@@ -1,0 +1,7 @@
+config { 
+  type: "table"
+}
+SELECT
+  City, Country, Postal_Code
+FROM
+  ${ref("sample_superstore")}
