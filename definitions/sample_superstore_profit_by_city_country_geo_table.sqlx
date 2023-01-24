@@ -1,6 +1,6 @@
 config { 
   type: "table",
-  schema: "sample_domain_dataset"
+  schema: "sample_domain_dataset",
 }
 SELECT
   Superstore.category,

@@ -2,5 +2,5 @@ config {
     type: "declaration",
     database: "galvanic-asset-350518",
     schema: "sample_domain_dataset",
-    name: "sample_superstore_table"
+   
 }
